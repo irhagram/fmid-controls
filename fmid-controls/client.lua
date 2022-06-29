@@ -21,4 +21,22 @@ function tekan(key)
     end
 end
 
+function tahan(key)
+    if Citizen.InvokeNative(0xF3A21BCD95725A4A, 0, key) then
+        return true
+    else
+        return false
+    end
+end
+
+function lepas(key)
+    if Citizen.InvokeNative(0x648EE3E7F38877DD, 0, key) then
+        return true
+    else
+        return false
+    end
+end
+
 exports('tekan', tekan)
+exports('tahan', tahan)
+exports('lepas', lepas)
